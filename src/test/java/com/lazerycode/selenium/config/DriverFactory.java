@@ -8,7 +8,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import static com.lazerycode.selenium.config.DriverType.FIREFOX;
+import static com.lazerycode.selenium.config.DriverType.CHROME;
 import static com.lazerycode.selenium.config.DriverType.valueOf;
 import static org.openqa.selenium.Proxy.ProxyType.MANUAL;
 import static org.openqa.selenium.remote.CapabilityType.PROXY;
@@ -29,7 +29,8 @@ public class DriverFactory {
     private final String proxyDetails = String.format("%s:%d", proxyHostname, proxyPort);
 
     public DriverFactory() {
-        DriverType driverType = FIREFOX;
+        //DriverType driverType = FIREFOX;
+        DriverType driverType = CHROME;
         String browser = System.getProperty("browser", driverType.toString()).toUpperCase();
         try {
             driverType = valueOf(browser);
